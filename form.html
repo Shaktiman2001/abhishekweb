@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head><title>form</title></head>
+
+<a href="practicepage.html" style="font-size:20px; font-family:arial; align:left;"> Back</a>
+
+
+<style>
+
+
+#main
+{
+width:60%;
+
+margin-left:19%;
+margin-top:10%;
+
+border:5px black solid;
+padding:10px;
+font-family:arial;
+color:white;
+border-radius:7px;
+box-shadow:10px 10px 10px grey;
+text-align:center;
+text-align:justify;
+
+
+
+
+}
+
+
+table 
+
+{width:100%;
+
+background:black;
+display: block;
+border-radius:7px;
+padding:20px;
+
+
+}
+
+
+
+input[type="text"]
+
+{
+    width: 70%;
+    margin-left: 1rem;
+border-radius:7px;
+padding:5px;
+margin-top:2%;
+transition: 250ms ease-in-out;
+}
+
+
+td
+{width:10%; padding-left: 10%;}
+
+input[type="password"]
+
+{
+width: 70%;
+margin-left: 1rem;
+border-radius:7px;
+padding:5px;
+
+margin-top:2%;
+transition: 250ms ease-in-out;
+
+}
+input[type="password"]:hover
+{
+box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.388);
+
+}input[type="text"]:hover
+{
+box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.388);
+
+}
+
+input[type="submit"]
+
+{
+
+border-radius:7px;
+padding:5px 10%;
+margin-top:5%;
+transition: 250ms ease-in-out;
+
+}
+
+input[type="reset"]
+
+{
+
+border-radius:7px;
+padding:5px 10%;
+margin-top:5%;
+transition: 250ms ease-in-out;
+
+
+
+}
+
+
+input[type="submit"]:hover
+{
+box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.388);
+background:none;
+color:green;
+
+}
+
+
+
+input[type="reset"]:hover
+{
+box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.388);
+background:none;
+color:red;
+
+}
+
+
+
+
+
+
+
+
+input:valid
+{
+border-color:green;
+}
+input:invalid
+{
+border-color:red;
+}
+
+
+
+
+input:required~label:after
+
+{
+content:"(required)";
+font-size:0.8em;
+color:red;
+}
+
+
+
+
+</style>
+
+
+
+
+
+<body>
+
+<div id="main">
+
+
+
+
+<form action="http://tataplay/user/get.php"  method="get">
+
+<table border="0">
+
+<caption><img  style="height:50px; width:50px;" src="images/formgif.gif"></caption>
+
+
+
+<caption style="font-size:20px;">LOGIN</caption>
+
+
+<tr>
+
+<td style="font-size:20px;"><label>User name</label><input type="text" placeholder="Type name here" required title="Type user name"></td>
+
+
+</tr>
+
+<tr>
+<td style="font-size:20px; "><label >Password</label> <input type="Password" placeholder="Type password here" required></td>
+
+
+</tr>
+
+<tr>
+<td style="padding-left: 32%;"><input type="submit" value="Login"><input type="reset"></td>
+</tr>
+
+</form>
+</table>
+</div>
+</body>
+</html>
