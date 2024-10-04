@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<h lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color scene</title>
+    
+    <a href="javascript.html"> <button> BACK</button> </a>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding-top: 50px;
+           
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        body.dark-mode h1 {
+            color: white;
+        }
+
+       
+    
+button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 90px;
+  height: 35px;
+  transition: 0.3s;
+  margin: 3px;
+}
+
+button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #d15cff5f;
+  color: #000000;
+}
+
+        body.dark-mode button {
+                  
+    
+button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 90px;
+  height: 35px;
+  transition: 0.3s;
+  margin: 3px;
+}
+
+button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #d15cff5f;
+  color: #000000;
+}
+           
+        }
+
+        .notes {
+            text-align: left;
+            margin: 0 auto;
+            padding: 20px;
+            width: 80%;
+            border: 2px solid #333;
+            background-color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .notes {
+            background-color: #444;
+            border-color: white;
+        }
+
+        .note-item {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .note-text {
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Dark Mode Button at Bottom Left Corner */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background-color: #555;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body onload="on()"> 
+    <div class="container">
+        <h1>Notes</h1>
+        <button onclick="addTitle()">USERNAME</button>
+        <button onclick="addNotes()">AGE</button>
+        <div class="notes" id="notes-section">
+            <ul id="notes-list">
+            </ul>
+        </div>
+    </div>
+
+    <button id="togglebtn"  onclick="modes()"> DARK</button>
+
+    <script>
+function on() {
+
+    var darkbtn=document.getElementById("togglebtn")
+    var moon 
+    moon.innerHTML="DARK"
+    darkbtn.appendChild(moon)
+    
+}
+      
+        function addTitle() {
+            let title = prompt("Enter the title:");
+            if (title) {
+                const ul = document.getElementById('notes-list');
+                let li = document.createElement('li');
+                li.className = "note-item";
+                li.textContent = title;
+                ul.appendChild(li);
+            }
+        }
+
+        function addNotes() {
+            let notes = prompt("Enter your notes:");
+            if (notes) {
+                const ul = document.getElementById('notes-list');
+                let li = document.createElement('li');
+                li.className = "note-item";
+                li.innerHTML = `<p class="note-text">${notes}</p>`;
+                ul.appendChild(li);
+            }
+        }
+
+        // Function to modes
+        function modes() {
+            document.body.classList.toggle('dark-mode');
+            var sun =document.getElementByID("togglebtn")
+            sun.innerHTML ="LIGHT"
+        }
+    </script>
+</body>
+</html>

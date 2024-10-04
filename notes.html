@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+
+
+    <a href="javascript.html"> <button> BACK</button> </a>
+
+  <style>
+
+
+
+    
+button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #d15cff5f;
+  color: #000000;
+}
+
+
+
+    #main {
+      width: 60%;
+      overflow: scroll;
+      border: 3px black solid;
+      margin: auto;
+      padding: 35px;
+      text-align: center;
+      text-align: justify;
+      background: #000;
+      font-family: arial;
+      color: rgb(0, 0, 0);
+    }
+
+    .mystyle {
+      background: rgb(101, 255, 242);
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <body>
+    <div id="main"><h5>ABOUT US</h5></div>
+
+    <script>
+      var para = document.createElement("p");
+      para.innerHTML = "Type Text here";
+      para.contentEditable = true;
+      var d = document.getElementById("main");
+      var cname = "TATA";
+      //   alert(d.id);
+      document.title = "Ready";
+      d.appendChild(para);
+
+      para.classList.add("mystyle");
+      function cls() {
+        para.innerHTML = "";
+      }
+
+      function settextcolor() {
+        para.style.color = prompt("set text color ....", "black");
+      }
+    </script>
+
+    <button onclick="cls()">clear</button>
+    <button onclick="settextcolor()">color</button>
+  </body>
+</html>
