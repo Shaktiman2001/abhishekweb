@@ -8,6 +8,29 @@
     <a href="javascript.html"> <button> BACK</button> </a>
 
     <style>
+#b1{
+
+width: 50px;
+background: #000000;
+padding:5px;
+border-radius: 100px;
+position:relative;
+cursor:pointer;
+transition:2s linear;
+}
+
+#b2{
+width: 50px;
+background:#6fc5ff5f;
+padding: 5px;
+border-radius: 100px;
+position:relative;
+transition:2s linear;
+
+}
+
+
+
         body {
             background-color: #ffffff;
             font-family: Arial, sans-serif;
@@ -55,7 +78,7 @@ button:hover {
   color: #000000;
 }
 
-        body.dark-mode button {
+   
                   
     
 button {
@@ -76,7 +99,7 @@ button:hover {
   color: #000000;
 }
            
-        }
+        
 
         .notes {
             text-align: left;
@@ -104,28 +127,23 @@ button:hover {
             font-family: 'Courier New', monospace;
         }
 
-        /* Dark Mode Button at Bottom Left Corner */
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: #ffffff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.dark-mode .dark-mode-toggle {
-            background-color: #555;
-            color: white;
-        }
-        
+      
     </style>
 </head>
+
+
+<body>
+<div id="b1">
+<span>🌙</span>
+</div>
+
+<div id="b2">
+  <span>🌞</span>
+  </div>
+
+
+
+
 <body onload="on()"> 
     <div class="container">
         <h1>Notes</h1>
@@ -137,18 +155,37 @@ button:hover {
         </div>
     </div>
 
-    <button id="togglebtn"  onclick="modes()"> DARK</button>
 
     <script>
-function on() {
 
-    var darkbtn=document.getElementById("togglebtn")
-    var moon 
-    moon.innerHTML="DARK"
-    darkbtn.appendChild(moon)
-    
-}
+      var d = document.getElementById("b2")
       
+      var n = document.getElementById("b1")
+      var a = 0
+      d.onclick = function()
+
+      {
+if(a==0)
+{
+a=1
+d.style.opacity ="0"
+n.style.opacity ="1"
+document.body.style.background="black"
+}
+else
+{
+  a=0
+n.style.opacity ="0"
+d.style.opacity ="1"
+document.body.style.background="white"
+
+}
+
+document.title = a
+
+      }
+
+
         function addTitle() {
             let title = prompt("Enter the title:");
             if (title) {
@@ -171,12 +208,6 @@ function on() {
             }
         }
 
-        // Function to modes
-        function modes() {
-            document.body.classList.toggle('dark-mode');
-            var sun =document.getElementByID("togglebtn")
-            sun.innerHTML ="LIGHT"
-        }
     </script>
 </body>
 </html>
