@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> div tag</title>
+    
+    <a href="javascript.html"> <button> BACK</button> </a>
+</head>
+        <style>
+
+    
+button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #d15cff5f;
+  color: #000000;
+}
+
+
+
+
+
+
+
+            @keyframes ani1
+            {
+                from{transform:rotateY(360deg)}  
+
+            to{transform:rotateY(0deg) }
+            }
+
+@keyframes ani2
+{
+    from{transform:rotateY(360deg)}
+    to{transform:rotateY(0deg)}
+}
+
+@keyframes myzoom
+{from{transform:perspective(400px);}
+to{transform:perspective(10px);}
+}
+
+#box{
+width: 500px;
+height: 400px;
+
+margin:auto;
+margin-top: 100px;
+perspective: 300px;
+
+}
+
+#one{
+    width:300px;
+    height:300px;
+    
+    text-align: center;
+    
+    position:relative;
+    left:150px;
+    top:50px;
+    animation-fill-mode: forwards;
+    animation:ani2 6s linear infinite;
+    ;
+    background-image:url(images/coin.png);
+    background-size: cover;
+}
+
+#two
+{
+    width:300px;
+    height:300px;
+    
+    text-align: center;
+    
+    position:relative;
+    left:150px;
+    top:-250px;
+    backface-visibility:hidden;
+    animation-fill-mode:forwards;
+    animation:ani2 6s linear infinite;
+    ;
+    background-image:url(images/coin.png);
+    background-size: cover;
+
+}
+
+        </style>
+  <body>
+    <div id="box">
+        <div id="one"></div>
+        <div id="two"></div>
+
+    </div>
+  </body>  
+</html>
